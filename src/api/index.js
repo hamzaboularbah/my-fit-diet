@@ -2,8 +2,8 @@ import { orderBy } from "lodash";
 const contentful = require("contentful");
 
 const client = contentful.createClient({
-  space: "",
-  accessToken: "",
+  space: process.env.REACT_APP_SPACE_ID,
+  accessToken: process.env.REACT_APP_CONTENTFUL_TOKEN,
 });
 
 const parseIngredient = ({ fields }) => fields;
@@ -30,8 +30,9 @@ const parsePlan = ({
 const parsePlansEntries = (plans, cb = parsePlan) =>
   orderBy(plans.map(cb), "order", "asc");
 
-const parseClient = ({ fields: { fullName: name, plans } }) => ({
+const parseClient = ({ fields: { fullName: name, plans, startDate } }) => ({
   name,
+  startDate,
   plans: parsePlansEntries(plans),
 });
 

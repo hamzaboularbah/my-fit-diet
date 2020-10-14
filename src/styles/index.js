@@ -4,6 +4,10 @@ import reset from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
+  a {
+    text-decoration: none;
+    
+  }
   `;
 
 export const GlobalContainer = styled.div`
