@@ -1018,7 +1018,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.1", "@babel/runtime@^7.5.5":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -3215,6 +3215,13 @@ content-type@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
+
+contentful-parsers@^1.2.15:
+  version "1.2.15"
+  resolved "https://registry.yarnpkg.com/contentful-parsers/-/contentful-parsers-1.2.15.tgz#d31211c4c05dd1e5a88a0e61ba61c0088975e516"
+  integrity sha512-B524x2/OFPaPb6ZucugPxvnPi9qTx+8I+U+PEZaF5wTzpSpRW3yczHfNkyI7VdvYIFda9CBcvEXLnmnsVaq1Tw==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
 
 contentful-resolve-response@^1.2.2:
   version "1.2.2"
@@ -6670,7 +6677,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
-lodash@^4.17.10, lodash@^4.17.19:
+lodash@^4.17.10, lodash@^4.17.19, lodash@^4.17.20:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
@@ -10025,6 +10032,11 @@ styled-components@^5.2.0:
     hoist-non-react-statics "^3.0.0"
     shallowequal "^1.1.0"
     supports-color "^5.5.0"
+
+styled-reset@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/styled-reset/-/styled-reset-4.2.3.tgz#6575cd62bf85bdb998fda63203a7c9a85371ce9e"
+  integrity sha512-0Njd9PfnijolnSSjX60V9yo99EQS5WIZCBWc4pABFqk1kRn6SHlVsiBqfYKrnTTOlLKF+tva0k7pnJpCf0hXsg==
 
 stylehacks@^4.0.0:
   version "4.0.3"
