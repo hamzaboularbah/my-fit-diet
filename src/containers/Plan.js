@@ -11,6 +11,7 @@ const Container = styled.div`
   .meal {
     margin: 16px 0px;
     cursor: pointer;
+    max-width: 335px;
     &.open {
       .arrow {
         transform: rotate(-90deg);
@@ -45,6 +46,7 @@ const BackButton = styled(Link)`
   display: flex;
   margin: 16px 0px 30px;
   align-items: center;
+  cursor: pointer;
   span,
   svg {
     margin-left: 5px;
@@ -88,7 +90,8 @@ const Plan = () => {
 
       {currentPlan?.meals.map(({ mealName, ingredients }, i) => (
         <Collapsible
-          transitionTime={200}
+          easing="ease"
+          transitionTime={100}
           openedClassName="meal open"
           className="meal"
           key={i}

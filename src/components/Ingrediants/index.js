@@ -7,6 +7,7 @@ const Ingredient = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 8px;
 `;
 const IngredientQuantity = styled(P)`
   min-width: 30px;

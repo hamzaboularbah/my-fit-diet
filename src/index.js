@@ -6,6 +6,7 @@ import { GlobalContainer } from "styles";
 import { GlobalStyle } from "styles";
 import theme from "theme";
 import AppState from "contexts/App";
+import swDev from "./swDev";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,3 +22,5 @@ ReactDOM.render(
   document.getElementById("root")
 );
 document.getElementsByTagName("html")[0].setAttribute("dir", "rtl");
+
+swDev();
