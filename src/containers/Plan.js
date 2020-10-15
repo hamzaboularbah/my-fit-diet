@@ -10,6 +10,7 @@ import Ingredients from "components/Ingrediants";
 const Container = styled.div`
   .meal {
     margin: 16px 0px;
+    cursor: pointer;
     &.open {
       .arrow {
         transform: rotate(-90deg);
@@ -21,6 +22,7 @@ const Container = styled.div`
   }
   .ingredients {
     padding: 20px 40px;
+    max-width: 335px;
   }
 `;
 
@@ -59,9 +61,11 @@ const Plan = () => {
 
   useEffect(() => {
     if (!isEmpty(plans))
-      setCurrentPlan(plans.filter(({ order }) => order == planId)[0]);
+      setCurrentPlan(
+        plans.filter(({ order }) => order === parseInt(planId))[0]
+      );
     else getClientData();
-  }, [plans]);
+  }, [plans, getClientData, planId]);
 
   return (
     <Container>

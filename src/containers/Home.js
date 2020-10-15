@@ -15,13 +15,12 @@ const Container = styled.div`
 
 const Home = () => {
   const {
-    clientData: { plans, name, startDate },
+    clientData: { plans, startDate },
     getClientData,
   } = useContext(AppContext);
   useEffect(() => {
     isEmpty(plans) && getClientData();
-    console.log(name);
-  }, [name]);
+  }, [getClientData, plans]);
   return (
     <Container>
       <H2>نظام اليوم !</H2>
