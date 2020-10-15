@@ -8,6 +8,13 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
 
   }
+  .switch-wrapper {
+    position: relative;
+    > div {
+      position: absolute;
+      width: 100%;
+    }
+  }
   `;
 
 export const GlobalContainer = styled.div`
