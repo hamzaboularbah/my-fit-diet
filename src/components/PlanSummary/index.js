@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { H3, P } from "styles";
 const Container = styled.div`
   max-width: 335px;
-  width: 100%;
   background-color: ${({ highlighted, theme }) =>
     highlighted ? theme.colors.darkred : theme.colors.lightred};
   padding: 10px;
@@ -28,7 +27,6 @@ const Container = styled.div`
     margin-left: 25px;
   }
 `;
-
 const PlanImage = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 10px;

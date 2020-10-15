@@ -6,14 +6,14 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
   a {
     text-decoration: none;
-    
+
   }
   `;
 
 export const GlobalContainer = styled.div`
-  max-width: 85%;
+  padding: 0px 20px;
   margin: 0 auto;
-  width: 100%;
+  width: calc(100% - 40px);
 
   @media (min-width: 560px) {
     max-width: 50%;

@@ -5,13 +5,16 @@ import { ThemeProvider } from "styled-components";
 import { GlobalContainer } from "styles";
 import { GlobalStyle } from "styles";
 import theme from "theme";
+import AppState from "contexts/App";
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <GlobalContainer>
-        <App />
+        <AppState>
+          <App />
+        </AppState>
       </GlobalContainer>
     </ThemeProvider>
   </React.StrictMode>,

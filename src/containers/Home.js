@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import PlanSummary from "components/PlanSummary";
 import { H2 } from "styles";
 import { addDays } from "date-fns";
 import { isEmpty } from "lodash";
 import { getPlanByDate } from "helpers";
-import * as api from "api";
 import styled from "styled-components";
+import AppContext from "contexts/App/AppContext";
 
 const Container = styled.div`
   .upcoming-plans {
@@ -14,36 +14,30 @@ const Container = styled.div`
 `;
 
 const Home = () => {
-  const [clientData, setClientData] = useState(null);
+  const {
+    clientData: { plans, name, startDate },
+    getClientData,
+  } = useContext(AppContext);
   useEffect(() => {
-    api
-      .getClient(process.env.REACT_APP_CLIENT_CODE)
-      .then((data) => setClientData(data));
-  }, []);
+    isEmpty(plans) && getClientData();
+    console.log(name);
+  }, [name]);
   return (
     <Container>
       <H2>نظام اليوم !</H2>
-      {!isEmpty(clientData) && (
+      {!isEmpty(plans) && (
         <PlanSummary
           highlighted
-          plan={getPlanByDate(
-            clientData.plans,
-            new Date(),
-            clientData.startDate
-          )}
+          plan={getPlanByDate(plans, new Date(), startDate)}
         />
       )}
       <div className="upcoming-plans">
         <H2>الأنظمة القادمة...</H2>
-        {!isEmpty(clientData) &&
-          Array.from({ length: clientData.plans.length - 1 }).map((_, i) => (
+        {!isEmpty(plans) &&
+          Array.from({ length: plans.length - 1 }).map((_, i) => (
             <PlanSummary
               key={i}
-              plan={getPlanByDate(
-                clientData.plans,
-                addDays(new Date(), i + 1),
-                clientData.startDate
-              )}
+              plan={getPlanByDate(plans, addDays(new Date(), i + 1), startDate)}
             />
           ))}
       </div>
