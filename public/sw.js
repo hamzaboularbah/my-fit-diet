@@ -10,7 +10,6 @@ this.addEventListener("install", (event) => {
         "/static/js/bundle.js",
         "/static/css/main.chunk.css",
         "/index.html",
-        "/*",
       ]);
     })
   );
