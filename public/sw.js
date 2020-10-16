@@ -1,4 +1,4 @@
-const cacheData = "my-diet-fit";
+let cacheData = "my-diet-fit";
 this.addEventListener("install", (event) => {
   event.waitUntil(
     caches
@@ -33,7 +33,7 @@ this.addEventListener("fetch", (event) => {
         .match(event.request)
         .then((response) => {
           if (response) return response;
-          else const requestUrl = event.request.clone();
+          else let requestUrl = event.request.clone();
           fetch(requestUrl);
         })
         .catch((err) => console.error(err))
