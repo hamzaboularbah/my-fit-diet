@@ -1,15 +1,19 @@
 const cacheData = "my-diet-fit";
 this.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(cacheData).then((cache) => {
-      cache.addAll([
-        "/static/js/main.chunk.js",
-        "/static/js/1.chunk.js",
-        "/static/js/bundle.js",
-        "/static/css/main.chunk.css",
-        "/index.html",
-      ]);
-    })
+    caches
+      .open(cacheData)
+      .then((cache) => {
+        cache.addAll([
+          "/",
+          "/index.html",
+          "/static/js/main.chunk.js",
+          "/static/js/1.chunk.js",
+          "/static/js/bundle.js",
+          "/static/css/main.chunk.css",
+        ]);
+      })
+      .catch((err) => console.error(err))
   );
 });
 
@@ -25,13 +29,14 @@ this.addEventListener("fetch", (event) => {
     //   );
     // }
     event.respondWith(
-      caches.match(event.request).then((resp) => {
-        if (resp) {
-          return resp;
-        }
-        let requestUrl = event.request.clone();
-        fetch(requestUrl);
-      })
+      caches
+        .match(event.request)
+        .then((response) => {
+          if (response) return response;
+          else const requestUrl = event.request.clone();
+          fetch(requestUrl);
+        })
+        .catch((err) => console.error(err))
     );
   }
 });
