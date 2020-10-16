@@ -1,7 +1,5 @@
-console.log("service worker is online");
-
 const cacheData = "appV1";
-this.addEventListener("install", (event) => {
+window.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheData).then((cache) => {
       cache.addAll([
@@ -15,7 +13,7 @@ this.addEventListener("install", (event) => {
   );
 });
 
-this.addEventListener("fetch", (event) => {
+window.addEventListener("fetch", (event) => {
   // console.warn("url",event.request.url)
 
   if (!navigator.onLine) {
