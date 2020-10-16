@@ -1,5 +1,5 @@
-const cacheData = "appV1";
-window.addEventListener("install", (event) => {
+const cacheData = "my-diet-fit";
+this.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheData).then((cache) => {
       cache.addAll([
@@ -13,7 +13,7 @@ window.addEventListener("install", (event) => {
   );
 });
 
-window.addEventListener("fetch", (event) => {
+this.addEventListener("fetch", (event) => {
   // console.warn("url",event.request.url)
 
   if (!navigator.onLine) {
