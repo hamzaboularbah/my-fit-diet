@@ -32,9 +32,12 @@ this.addEventListener("fetch", (event) => {
       caches
         .match(event.request)
         .then((response) => {
-          if (response) return response;
-          else let requestUrl = event.request.clone();
-          fetch(requestUrl);
+          if (response) {
+            return response;
+          } else {
+            let requestUrl = event.request.clone();
+            fetch(requestUrl);
+          }
         })
         .catch((err) => console.error(err))
     );
