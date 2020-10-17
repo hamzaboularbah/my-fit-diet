@@ -1,0 +1,816 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "b68ig6fmg3ym"
+          }
+        },
+        "id": "client",
+        "type": "ContentType",
+        "createdAt": "2020-10-11T10:07:17.747Z",
+        "updatedAt": "2020-10-14T16:32:16.338Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2020-10-14T16:32:16.338Z",
+        "firstPublishedAt": "2020-10-11T10:07:18.224Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        }
+      },
+      "displayField": "fullName",
+      "name": "Client",
+      "description": "",
+      "fields": [
+        {
+          "id": "fullName",
+          "name": "FullName",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "accessKey",
+          "name": "Access Key",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "size": {
+                "max": 20
+              }
+            },
+            {
+              "regexp": {
+                "pattern": "^[ A-Za-z0-9_@./#&+-]*$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "plans",
+          "name": "plans",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "size": {
+                "max": 6
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": ["plan"]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "startDate",
+          "name": "Start Date",
+          "type": "Date",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "b68ig6fmg3ym"
+          }
+        },
+        "id": "plan",
+        "type": "ContentType",
+        "createdAt": "2020-10-11T10:15:54.907Z",
+        "updatedAt": "2020-10-11T11:04:11.516Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 23,
+        "publishedAt": "2020-10-11T11:04:11.516Z",
+        "firstPublishedAt": "2020-10-11T10:15:55.381Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "publishedCounter": 12,
+        "version": 24,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        }
+      },
+      "displayField": "planName",
+      "name": "Plan",
+      "description": "",
+      "fields": [
+        {
+          "id": "planName",
+          "name": "planName",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "planDisplayName",
+          "name": "planDisplayName",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "calories",
+          "name": "calories",
+          "type": "Integer",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "order",
+          "name": "order",
+          "type": "Integer",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "meals",
+          "name": "meals",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": ["meal"]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "b68ig6fmg3ym"
+          }
+        },
+        "id": "meal",
+        "type": "ContentType",
+        "createdAt": "2020-10-11T10:27:58.405Z",
+        "updatedAt": "2020-10-17T17:59:06.820Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 11,
+        "publishedAt": "2020-10-17T17:59:06.820Z",
+        "firstPublishedAt": "2020-10-11T10:27:58.920Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        }
+      },
+      "displayField": "mealName",
+      "name": "Meal",
+      "description": "",
+      "fields": [
+        {
+          "id": "mealName",
+          "name": "mealName",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "in": [
+                "الفطور",
+                "الغداء",
+                "وجبة خفيفة 1",
+                "وجبة خفيفة 2",
+                "العشاء"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ingredients",
+          "name": "ingredients",
+          "type": "Array",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": ["ingredient"]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "b68ig6fmg3ym"
+          }
+        },
+        "id": "ingredient",
+        "type": "ContentType",
+        "createdAt": "2020-10-11T10:54:34.560Z",
+        "updatedAt": "2020-10-11T11:17:11.578Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2020-10-11T11:17:11.578Z",
+        "firstPublishedAt": "2020-10-11T10:54:35.317Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        }
+      },
+      "displayField": "ingredientFullinfos",
+      "name": "Ingredient",
+      "description": "",
+      "fields": [
+        {
+          "id": "ingredientFullinfos",
+          "name": "ingredientFullinfos",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ingredientName",
+          "name": "ingredientName",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "quantity",
+          "name": "quantity",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "b68ig6fmg3ym",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 10,
+        "createdAt": "2020-10-11T10:07:18.325Z",
+        "createdBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-10-14T16:32:17.274Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "client",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "fullName",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "accessKey",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "plans",
+          "settings": {
+            "bulkEditing": true,
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "startDate",
+          "settings": {
+            "ampm": "24",
+            "format": "dateonly"
+          },
+          "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "b68ig6fmg3ym",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 24,
+        "createdAt": "2020-10-11T10:15:55.466Z",
+        "createdBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-10-11T11:04:12.240Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "plan",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "planName",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "planDisplayName",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "calories",
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "order",
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "meals",
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "b68ig6fmg3ym",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 12,
+        "createdAt": "2020-10-11T10:27:59.071Z",
+        "createdBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-10-17T17:59:07.555Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "meal",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "mealName",
+          "widgetId": "radio",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ingredients",
+          "settings": {
+            "bulkEditing": true,
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryLinksEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "b68ig6fmg3ym",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 6,
+        "createdAt": "2020-10-11T10:54:35.443Z",
+        "createdBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2020-10-11T11:17:12.308Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5D9ccs1OJrkBTjQAaVC7xp",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "ingredient",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "ingredientFullinfos",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ingredientName",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "quantity",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "0sAYqRkffER1CB1BfOh2DV",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "b68ig6fmg3ym"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "createdAt": "2020-07-26T08:15:15Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "updatedAt": "2020-07-26T08:15:15Z"
+      }
+    }
+  ],
+  "webhooks": [],
+  "roles": [
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": ["read"],
+        "Settings": [],
+        "ContentDelivery": [],
+        "Environments": [],
+        "EnvironmentAliases": [],
+        "Tags": []
+      },
+      "sys": {
+        "type": "Role",
+        "id": "0sBGG0wCMJ5eMnB7QdOmV5",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "b68ig6fmg3ym"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "createdAt": "2020-07-26T08:15:15Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5D9ccs1OJrkBTjQAaVC7xp"
+          }
+        },
+        "updatedAt": "2020-07-26T08:15:15Z"
+      }
+    }
+  ]
+}

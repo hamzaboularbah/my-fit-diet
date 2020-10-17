@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styled from "styled-components";
 import { H3, P } from "styles";
 const Container = styled.div`
@@ -51,7 +51,7 @@ const PlanSummary = ({
   plan: { calories = "1800", order, meals = [] },
 }) => {
   return (
-    <Link to={"/" + order}>
+    <Link href={"/" + order}>
       <Container highlighted={highlighted}>
         <PlanImage>
           <img src={"/food-illustrations/" + order + ".svg"} alt="" />

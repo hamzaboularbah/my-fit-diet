@@ -4,6 +4,9 @@ import reset from "styled-reset";
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
+  #__next {
+    direction: rtl
+  }
   a {
     text-decoration: none;
 
@@ -15,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
       width: 100%;
     }
   }
+
   `;
 
 export const GlobalContainer = styled.div`

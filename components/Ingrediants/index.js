@@ -11,6 +11,7 @@ const Ingredient = styled.div`
 `;
 const IngredientQuantity = styled(P)`
   min-width: 30px;
+  max-width: 40px;
   display: flex;
   justify-content: center;
   border-radius: 10px;

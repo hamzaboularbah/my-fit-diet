@@ -1,11 +1,11 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import PlanSummary from "components/PlanSummary";
 import { H2 } from "styles";
 import { addDays } from "date-fns";
 import { isEmpty } from "lodash";
 import { getPlanByDate } from "helpers";
 import styled from "styled-components";
-import AppContext from "contexts/App/AppContext";
+import * as api from "api";
 
 const Container = styled.div`
   .upcoming-plans {
@@ -13,14 +13,7 @@ const Container = styled.div`
   }
 `;
 
-const Home = () => {
-  const {
-    clientData: { plans, startDate },
-    getClientData,
-  } = useContext(AppContext);
-  useEffect(() => {
-    isEmpty(plans) && getClientData();
-  }, [getClientData, plans]);
+const Home = ({ clientData: { plans, startDate } }) => {
   return (
     <Container>
       <H2>نظام اليوم !</H2>
@@ -43,5 +36,14 @@ const Home = () => {
     </Container>
   );
 };
+
+export async function getServerSideProps() {
+  const clientData = await api.getClient(process.env.CLIENT_CODE);
+  return {
+    props: {
+      clientData,
+    },
+  };
+}
 
 export default Home;
